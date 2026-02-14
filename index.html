@@ -274,7 +274,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid #e75480;
+            border: 3px solid #ffb6c1;
             position: relative;
             z-index: 1;
             background: #fff0f5;
@@ -705,11 +705,6 @@
             .terminal-content {
                 padding: 1.5rem;
             }
-            
-            .profile-image-container {
-                width: 200px;
-                height: 200px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -718,8 +713,8 @@
             }
             
             .profile-image-container {
-                width: 180px;
-                height: 180px;
+                width: 200px;
+                height: 200px;
             }
             
             .cta-buttons {
@@ -728,10 +723,6 @@
             
             .btn {
                 width: 100%;
-            }
-            
-            .terminal-content {
-                padding: 1rem;
             }
         }
 
@@ -782,18 +773,6 @@
             color: #e75480;
             text-shadow: 0 0 10px rgba(231, 84, 128, 0.3);
         }
-        
-        /* رسالة عند عدم وجود الصورة */
-        .image-fallback {
-            display: none;
-            color: #e75480;
-            font-size: 3rem;
-            margin-top: 2rem;
-        }
-        
-        .profile-image[alt="مريم جاب الله"] {
-            background: linear-gradient(45deg, #ffb6c1, #ffc0cb);
-        }
     </style>
 </head>
 <body>
@@ -828,8 +807,7 @@
                 <li><a onclick="showPage('projects')">المشاريع</a></li>
                 <li><a onclick="showPage('contact')">تواصل</a></li>
                 <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/MariamGaballah" target="_blank"><i class="fab fa-github"></i></a>
                     <a onclick="showPage('contact')"><i class="fas fa-heart"></i></a>
                 </div>
             </ul>
@@ -856,8 +834,7 @@
                             <div class="profile-section">
                                 <div class="profile-image-container">
                                     <div class="profile-glow"></div>
-                                    <!-- تم تعديل مسار الصورة هنا لترتبط بـ Photo.png -->
-                                    <img src="Photo.png" alt="مريم جاب الله" class="profile-image" onerror="this.src='Photo.png' this.onerror=null;">
+                                    <img src="https://via.placeholder.com/250x250/fff0f5/e75480?text=M" alt="مريم جاب الله" class="profile-image">
                                 </div>
                             </div>
                             
@@ -1082,6 +1059,13 @@
                                 <p>العربية · الإنجليزية (متقدم)</p>
                             </div>
                         </div>
+                        <a href="https://github.com/MariamGaballah" target="_blank" class="contact-card">
+                            <i class="fab fa-github contact-icon"></i>
+                            <div class="contact-info">
+                                <h4>GitHub</h4>
+                                <p>@MariamGaballah</p>
+                            </div>
+                        </a>
                     </div>
                     
                     <div style="text-align: center; padding: 0 50px 50px;">
@@ -1138,7 +1122,7 @@
             const navList = document.getElementById('navLinks');
             const menuToggle = document.querySelector('.menu-toggle');
             
-            if (navList && menuToggle && !navList.contains(event.target) && !menuToggle.contains(event.target)) {
+            if (!navList.contains(event.target) && !menuToggle?.contains(event.target)) {
                 navList.classList.remove('active');
             }
         });
